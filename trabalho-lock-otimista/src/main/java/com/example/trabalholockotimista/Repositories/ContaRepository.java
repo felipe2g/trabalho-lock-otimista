@@ -6,5 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ContaRepository extends JpaRepository<Conta, Long> {
+    @Lock(LockModeType.OPTIMISTIC)
     Conta findByNumeroConta(String numeroConta);
 }
